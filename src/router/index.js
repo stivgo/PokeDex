@@ -21,7 +21,7 @@ const routes = [
     path: '/favorites',
     name: 'favorites',
     component: Favorites,
-  }
+  },
 
 ];
 
