@@ -8,6 +8,7 @@ export default {
       pokemons: [],
       nextUrl: null,
       favorites: [],
+      loading: false,
     };
   },
   mutations,
