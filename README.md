@@ -1,5 +1,9 @@
 # PokeDex
 Prueba de Global66 con la api de de https://pokeapi.co/
+Las tecnologías utilizadas fueron 
+- vuex: manejo de estados.
+- router: navegación entre paginas.
+- axios: peticiones a la api.  
 
 ## Project setup
 ```
