@@ -31,14 +31,22 @@ export default {
 };
 </script>
 
-<style>
-.active {
-  background-color: var(--third-color);
-  color: white;
+<style scoped>
+button{
+  color: #FFF;
   border-radius: 60px;
   padding: 0.6rem 1.2rem;
   font-weight: bold;
   font-size: 18px;
+}
+
+i{
+  padding-right: 0.5rem;
+  color: #FFF;
+}
+
+.active {
+  background-color: var(--third-color);
 }
 
 .active:hover {
@@ -51,7 +59,6 @@ export default {
 }
 
 .disabled {
-  background-color: #ccc;
-  color: #666;
+  background-color: var(--fifth-color);
 }
 </style>
