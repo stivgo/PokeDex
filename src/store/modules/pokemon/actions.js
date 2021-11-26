@@ -39,5 +39,14 @@ export default {
         commit('SET_LOADING', false);
       });
   },
+  searchInfoPokemon({ commit }, name) {
+    axios.get(`${server}${name}`)
+      .then((response) => {
+        commit('SET_INFO_POKEMON', response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  },
 
 };

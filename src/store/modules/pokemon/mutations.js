@@ -2,7 +2,8 @@ import {
   SET_POKEMON, SET_LOADING,
   SET_POKEMON_SEARCH, SET_SEARCH,
   RESET_POKEMON, SET_FAVORITE,
-  DELETE_FAVORITE,
+  DELETE_FAVORITE, SET_INFO_POKEMON,
+  GET_FAVORITES, SET_IS_SEARCH_FAVORITE,
 } from './mutation-types';
 
 export default {
@@ -31,5 +32,17 @@ export default {
   [DELETE_FAVORITE](state, data) {
     state.favorites = state.favorites.filter((item) => item !== data);
   },
-
+  [SET_INFO_POKEMON](state, data) {
+    state.infoPokemon = data;
+  },
+  [GET_FAVORITES](state, data) {
+    if (data) {
+      state.favoritesFilter = state.favorites.filter((item) => item === data);
+    } else {
+      state.favoritesFilter = state.favorites;
+    }
+  },
+  [SET_IS_SEARCH_FAVORITE](state, data) {
+    state.isSearchFavorite = data;
+  },
 };
