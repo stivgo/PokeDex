@@ -97,48 +97,48 @@ export default {
 
 <style scoped>
 .modal-backdrop {
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
+  align-items: center;
   background-color: rgba(0, 0, 0, 0.3);
+  bottom: 0;
   display: flex;
   justify-content: center;
-  align-items: center;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
 }
 
 .modal {
-  background: #ffffff;
+  background: var(--seventh-color);
   box-shadow: 2px 2px 20px 1px;
-  overflow-x: auto;
   display: flex;
   flex-direction: column;
-  width: 80%;
   height: 80%;
+  overflow-x: auto;
+  width: 80%;
 }
 
 header {
-  height: 50%;
   background: url("../assets/background.png") no-repeat center center;
+  height: 50%;
 }
 
 header button {
-  position: absolute;
-  left: 80%;
-  top: 12%;
   background: transparent;
+  left: 80%;
+  position: absolute;
+  top: 12%;
 }
 
 header img {
-  position: absolute;
-  width: 10rem;
   left: 35%;
+  position: absolute;
   top: 13%;
+  width: 10rem;
 }
 
 button i {
-  color: #ffffff;
+  color: var(--seventh-color);
   font-size: 2em;
 }
 
@@ -151,18 +151,18 @@ article {
 }
 strong,
 p {
+  color: var(--second-color);
   font-size: 18px;
   line-height: 150%;
-  color: #5e5e5e;
 }
 footer {
-  padding: 1rem;
+  align-items: center;
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  padding: 1rem;
 }
 hr {
-  border: 1px solid #e8e8e8;
+  border: 1px solid #E8E8E8;
 }
 .copy {
   display: none;
@@ -180,8 +180,8 @@ hr {
 
 @media (min-width: 720px) {
   .modal {
-    width: 50%;
     height: 80%;
+    width: 50%;
   }
   header button {
     left: 70%;

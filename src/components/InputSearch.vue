@@ -56,21 +56,21 @@ export default {
 
 <style scoped>
 .input-search {
-  background: #ffffff;
-  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.04);
+  background: var(--seventh-color);
   border-radius: 5px;
-  width: 90%;
-  padding: 1rem;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.04);
   margin: 1rem 0;
+  padding: 1rem;
+  width: 90%;
 }
 input {
   font-size: 16px;
-  width: 80%;
   margin-left: 1rem;
+  width: 80%;
 }
 
 input::placeholder {
-  color: #bfbfbf;
+  color: var(--fifth-color);
 }
 input:active,
 input:focus {

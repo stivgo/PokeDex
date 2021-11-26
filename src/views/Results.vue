@@ -12,7 +12,7 @@
           <Button :text="'Go back home'" @click="getPokemons" />
         </section>
         <section v-else>
-          <ItemList :item="pokemonSearch" />
+          <ItemList :item="pokemonSearch" @click="showModal(pokemonSearch)" />
         </section>
       </div>
       <div v-else>
@@ -129,19 +129,19 @@ export default {
 }
 
 header {
+  background: var(--eight-color);
   display: flex;
   justify-content: center;
-  width: 100%;
   position: sticky;
   top: 0;
-  background: #f5f5f5;
+  width: 100%;
 }
 
 section {
+  align-items: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
   margin-bottom: 2rem;
 }
 .no-result {
@@ -150,33 +150,33 @@ section {
 }
 
 .no-result h2 {
+  color: var(--first-color);
   font-weight: bold;
   font-size: 36px;
   line-height: 43px;
-  color: #353535;
 }
 
 .no-result p {
+  color: var(--second-color);
   font-weight: 500;
   font-size: 20px;
   line-height: 150%;
-  color: #5e5e5e;
 }
 
 footer {
-  position: fixed;
+  background: var(--seventh-color);
   bottom: 0;
-  width: 100%;
-  background: #ffffff;
   box-shadow: 0px -5px 4px rgba(0, 0, 0, 0.05);
   display: flex;
   justify-content: center;
   padding: 1rem;
+  position: fixed;
+  width: 100%;
 }
 
 footer button {
-  width: 50%;
   margin: 1%;
+  width: 50%;
 }
 
 @media (min-width: 720px) {

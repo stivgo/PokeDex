@@ -33,16 +33,16 @@ export default {
 
 <style scoped>
 button{
-  color: #FFF;
   border-radius: 60px;
-  padding: 0.6rem 1.2rem;
-  font-weight: bold;
+  color: var(--seventh-color);
   font-size: 18px;
+  font-weight: bold;
+  padding: 0.6rem 1.2rem;
 }
 
 i{
+  color: var(--seventh-color);
   padding-right: 0.5rem;
-  color: #FFF;
 }
 
 .active {

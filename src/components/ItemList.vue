@@ -34,21 +34,21 @@ export default {
 
 <style scoped>
 .item-list{
-  background: #FFFFFF;
+  align-items: center;
+  background: var(--seventh-color);
   border-radius: 5px;
   display: flex;
-  width: 90%;
-  padding: 0.5rem;
   justify-content: space-between;
-  align-items: center;
   margin: 0.3rem;
+  padding: 0.5rem;
+  width: 90%;
 }
 
 .item-list p{
+  cursor: pointer;
   font-weight: 500;
   font-size: 22px;
   line-height: 26px;
-  cursor: pointer;
 }
 
  @media (min-width: 720px) {

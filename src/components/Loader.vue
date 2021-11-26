@@ -12,19 +12,19 @@ export default {
 
 <style scoped>
 section{
-  display: flex;
-  justify-content: center;
   align-items: center;
-  width: 100%;
+  display: flex;
   height: 100vh;
+  justify-content: center;
+  width: 100%;
 }
 .loading {
-  position: relative;
   animation-name: rebote;
   animation-duration: 0.6s;
   animation-iteration-count: infinite;
   animation-direction: reverse;
   animation-timing-function: ease-out;
+  position: relative;
 }
 
 @keyframes rebote {

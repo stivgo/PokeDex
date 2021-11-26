@@ -31,28 +31,28 @@ export default {
 
 <style scoped>
 .welcome {
+  align-items: center;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: space-around;
   height: 100vh;
+  justify-content: space-around;
 }
 
 .welcome h1 {
+  color: var(--first-color);
   font-style: normal;
   font-weight: bold;
   font-size: 26px;
   line-height: 31px;
-  color: var(--first-color);
 }
 
 .welcome p {
-  width: 75%;
+  color: var(--second-color);
   text-align: center;
   font-weight: 500;
   font-size: 18px;
   line-height: 150%;
-  color: var(--second-color);
+  width: 75%;
 }
 
 @media (min-width: 720px) {

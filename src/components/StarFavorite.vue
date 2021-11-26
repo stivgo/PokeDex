@@ -32,13 +32,13 @@ export default {
 
 <style scoped>
 .star-favorite {
-  background: #F5F5F5;
-  display: flex;
-  justify-content: center;
   align-items: center;
-  padding: 0.5rem;
+  background: var(--eight-color);
   border-radius: 50px;
   cursor: pointer;
+  display: flex;
+  justify-content: center;
+  padding: 0.5rem;
 }
 
 .star-favorite i{
@@ -46,10 +46,10 @@ export default {
 }
 
 .active{
-  color :#ECA539;
+  color :var(--sixth-color);
 }
 
 .disabled{
-  color: #BFBFBF;
+  color: var(--fifth-color);
 }
 </style>

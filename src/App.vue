@@ -12,17 +12,20 @@
   --fourth-color: #C00E20;
   --fifth-color: #BFBFBF;
   --sixth-color: #ECA539;
+  --seventh-color: #FFFFFF;
+  --eight-color: #F5F5F5;
 }
 
 *{
-  margin: 0;
-  padding: 0;
+  border: none;
   box-sizing: border-box;
   font-family: 'Lato', sans-serif;
-  border: none;
+  margin: 0;
+  padding: 0;
+
 }
 body{
-  background: #F5F5F5;
+  background: var(--eight-color);
 }
 
 button{
