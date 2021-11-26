@@ -24,6 +24,7 @@ export default {
       } else {
         this.$store.commit('pokemon/SET_FAVORITE', this.name);
       }
+      this.$store.commit('pokemon/GET_FAVORITES', null);
     },
   },
 };
@@ -37,6 +38,7 @@ export default {
   align-items: center;
   padding: 0.5rem;
   border-radius: 50px;
+  cursor: pointer;
 }
 
 .star-favorite i{
