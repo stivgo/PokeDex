@@ -25,5 +25,19 @@ export default {
         console.log(error);
       });
   },
+  searchPokemon({ commit }, name) {
+    commit('SET_LOADING', true);
+    commit('SET_SEARCH', name);
+    axios.get(`${server}${name}`)
+      .then((response) => {
+        commit('SET_POKEMON_SEARCH', response.data);
+        commit('SET_LOADING', false);
+      })
+      .catch((error) => {
+        console.log(error);
+        commit('SET_POKEMON_SEARCH', {});
+        commit('SET_LOADING', false);
+      });
+  },
 
 };

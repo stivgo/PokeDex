@@ -18,6 +18,9 @@ export default {
   components: {
     Button,
   },
+  created() {
+    this.$store.commit('pokemon/RESET_POKEMON');
+  },
   methods: {
     changeView() {
       this.$router.push('/results');

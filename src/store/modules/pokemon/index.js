@@ -6,6 +6,9 @@ export default {
   state() {
     return {
       pokemons: [],
+      pokemonSearch: {},
+      isSearch: false,
+      search: '',
       nextUrl: null,
       favorites: [],
       loading: false,

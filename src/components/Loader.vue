@@ -1,26 +1,27 @@
 <template>
-  <img v-if="loading" class="loading" src="" alt="" />
+<section>
+  <img class="loading" src="@/assets/loader.png" alt="Imagen Pokebola" />
+</section>
 </template>
 
 <script>
 export default {
   name: 'Loader',
-  computed: {
-    loading() {
-      return this.$store.state.pokemon.loading;
-    },
-  },
 };
 </script>
 
 <style scoped>
+section{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+}
 .loading {
-  -webkit-animation-name: rebote; /* Chrome, Safari, Opera */
-  -webkit-animation-duration: 1s; /* Chrome, Safari, Opera */
-  -webkit-animation-iteration-count: infinite; /* Chrome, Safari, Opera */
-  -webkit-animation-direction: reverse; /* Chrome, Safari, Opera */
+  position: relative;
   animation-name: rebote;
-  animation-duration: 0.5s;
+  animation-duration: 0.6s;
   animation-iteration-count: infinite;
   animation-direction: reverse;
   animation-timing-function: ease-out;

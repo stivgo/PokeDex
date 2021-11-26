@@ -21,6 +21,9 @@
   font-family: 'Lato', sans-serif;
   border: none;
 }
+body{
+  background: #F5F5F5;
+}
 
 button{
   cursor: pointer;
