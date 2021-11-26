@@ -1,7 +1,7 @@
 <template>
   <article class="item-list">
-    <p>{{ name }}</p>
-    <StarFavorite />
+    <p>{{ item.name }}</p>
+    <StarFavorite :isFavorite="item.favorite" :name="item.name" />
   </article>
 </template>
 
@@ -11,8 +11,8 @@ import StarFavorite from './StarFavorite.vue';
 export default {
   name: 'ItemList',
   props: {
-    name: {
-      type: String,
+    item: {
+      type: Object,
       required: true,
     },
   },
@@ -32,7 +32,7 @@ export default {
   background: #FFFFFF;
   border-radius: 5px;
   display: flex;
-  width: 50%;
+  width: 90%;
   padding: 0.5rem;
   justify-content: space-between;
   align-items: center;
@@ -45,5 +45,11 @@ export default {
   font-size: 22px;
   line-height: 26px;
 }
+
+ @media (min-width: 720px) {
+  .item-list{
+    width: 50%;
+  }
+ }
 
 </style>

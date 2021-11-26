@@ -1,5 +1,5 @@
 <template>
-  <div class="results">
+  <div class="results" >
     <Loader v-if="loading" />
     <div class="info" v-else>
       <header>
@@ -12,15 +12,15 @@
           <Button :text="'Go back home'" @click="getPokemons" />
         </section>
         <section v-else>
-          <ItemList :name="pokemonSearch.name" />
+          <ItemList :item="pokemonSearch" />
         </section>
       </div>
       <div v-else>
-        <section>
+        <section >
           <ItemList
             v-for="(item, index) of pokemons"
             :key="index"
-            :name="item.name"
+            :item="item"
           />
         </section>
       </div>
@@ -48,10 +48,22 @@ export default {
   },
   created() {
     this.getPokemons();
+    window.addEventListener('scroll', this.getNextPokemons);
+  },
+  destroyed() {
+    window.removeEventListener('scroll', this.getNextPokemons);
   },
   methods: {
     getPokemons() {
       this.$store.dispatch('pokemon/getPokemons');
+    },
+    getNextPokemons() {
+      const scroll = document.documentElement.scrollTop;
+      const height = document.documentElement.scrollHeight;
+      const offset = document.documentElement.offsetHeight;
+      if (scroll + offset >= height - 100) {
+        this.$store.dispatch('pokemon/getNextPokemons');
+      }
     },
   },
   computed: {
@@ -59,10 +71,18 @@ export default {
       return this.$store.state.pokemon.loading;
     },
     pokemons() {
-      return this.$store.state.pokemon.pokemons;
+      const { pokemons, favorites } = this.$store.state.pokemon;
+      return pokemons.map((pokemon) => ({
+        ...pokemon,
+        favorite: favorites.includes(pokemon.name),
+      }));
     },
     pokemonSearch() {
-      return this.$store.state.pokemon.pokemonSearch;
+      const { pokemonSearch, favorites } = this.$store.state.pokemon;
+      return {
+        ...pokemonSearch,
+        favorite: favorites.includes(pokemonSearch.name),
+      };
     },
     isSearch() {
       return this.$store.state.pokemon.isSearch;
@@ -90,10 +110,6 @@ header {
   position: sticky;
   top: 0;
   background: #f5f5f5;
-}
-
-header input {
-  width: 95%;
 }
 
 section {
@@ -134,7 +150,13 @@ footer {
 }
 
 footer button {
-  width: 23%;
+  width: 50%;
   margin: 1%;
+}
+
+@media (min-width: 720px) {
+  footer button {
+    width: 23%;
+  }
 }
 </style>

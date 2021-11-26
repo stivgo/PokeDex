@@ -1,6 +1,6 @@
 <template>
   <div class="star-favorite">
-    <i :class="('fas fa-star')+ (isFavorite ? ' active ': ' disabled ')"></i>
+    <i :class="('fas fa-star')+ (isFavorite ? ' active ': ' disabled ')" @click="addFavorite"></i>
   </div>
 </template>
 
@@ -11,6 +11,19 @@ export default {
     isFavorite: {
       type: Boolean,
       default: false,
+    },
+    name: {
+      type: String,
+      default: '',
+    },
+  },
+  methods: {
+    addFavorite() {
+      if (this.isFavorite) {
+        this.$store.commit('pokemon/DELETE_FAVORITE', this.name);
+      } else {
+        this.$store.commit('pokemon/SET_FAVORITE', this.name);
+      }
     },
   },
 };

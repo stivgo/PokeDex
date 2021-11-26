@@ -42,13 +42,13 @@ export default {
     background: #FFFFFF;
     box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.04);
     border-radius: 5px;
-    width: 50%;
+    width: 90%;
     padding: 1rem;
     margin: 1rem 0;
   }
   input{
     font-size: 16px;
-    width: 95%;
+    width: 80%;
     margin-left: 1rem;
   }
 
@@ -61,4 +61,13 @@ export default {
   i{
     color: var(--fifth-color);
   }
+
+  @media (min-width: 720px) {
+   .input-search{
+    width: 50%;
+  }
+  input{
+    width: 80%;
+  }
+}
 </style>
