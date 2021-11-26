@@ -1,6 +1,6 @@
 <template>
   <article class="item-list">
-    <p>Pokemon {{ item }}</p>
+    <p>{{ name }}</p>
     <StarFavorite />
   </article>
 </template>
@@ -11,7 +11,7 @@ import StarFavorite from './StarFavorite.vue';
 export default {
   name: 'ItemList',
   props: {
-    item: {
+    name: {
       type: String,
       required: true,
     },
@@ -27,5 +27,23 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
+.item-list{
+  background: #FFFFFF;
+  border-radius: 5px;
+  display: flex;
+  width: 50%;
+  padding: 0.5rem;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  margin: 0.3rem;
+}
+
+.item-list p{
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 26px;
+}
+
 </style>
