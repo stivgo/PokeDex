@@ -1,7 +1,8 @@
 import {
   SET_POKEMON, SET_LOADING,
   SET_POKEMON_SEARCH, SET_SEARCH,
-  RESET_POKEMON,
+  RESET_POKEMON, SET_FAVORITE,
+  DELETE_FAVORITE,
 } from './mutation-types';
 
 export default {
@@ -23,6 +24,12 @@ export default {
   },
   [RESET_POKEMON](state) {
     state.pokemons = [];
+  },
+  [SET_FAVORITE](state, data) {
+    state.favorites.push(data);
+  },
+  [DELETE_FAVORITE](state, data) {
+    state.favorites = state.favorites.filter((item) => item !== data);
   },
 
 };

@@ -4,3 +4,4 @@ export const SET_FAVORITE = 'SET_FAVORITE';
 export const SET_LOADING = 'SET_LOADING';
 export const SET_SEARCH = 'SET_SEARCH';
 export const RESET_POKEMON = 'RESET_POKEMON';
+export const DELETE_FAVORITE = 'DELETE_FAVORITE';
