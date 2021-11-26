@@ -11,7 +11,10 @@ export default {
       search: '',
       nextUrl: null,
       favorites: [],
+      favoritesFilter: [],
+      isSearchFavorite: false,
       loading: false,
+      infoPokemon: {},
     };
   },
   mutations,

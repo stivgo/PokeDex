@@ -1,6 +1,6 @@
 <template>
   <article class="item-list">
-    <p>{{ item.name }}</p>
+    <p @click="handleClick">{{ item.name }}</p>
     <StarFavorite :isFavorite="item.favorite" :name="item.name" />
   </article>
 </template>
@@ -24,6 +24,11 @@ export default {
       selectedItem: null,
     };
   },
+  methods: {
+    handleClick() {
+      this.$emit('click');
+    },
+  },
 };
 </script>
 
@@ -36,7 +41,6 @@ export default {
   padding: 0.5rem;
   justify-content: space-between;
   align-items: center;
-  cursor: pointer;
   margin: 0.3rem;
 }
 
@@ -44,6 +48,7 @@ export default {
   font-weight: 500;
   font-size: 22px;
   line-height: 26px;
+  cursor: pointer;
 }
 
  @media (min-width: 720px) {

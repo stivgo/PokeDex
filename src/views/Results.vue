@@ -1,5 +1,5 @@
 <template>
-  <div class="results" >
+  <div class="results">
     <Loader v-if="loading" />
     <div class="info" v-else>
       <header>
@@ -16,19 +16,26 @@
         </section>
       </div>
       <div v-else>
-        <section >
+        <section>
           <ItemList
             v-for="(item, index) of pokemons"
             :key="index"
             :item="item"
+            @click="showModal(item)"
           />
         </section>
       </div>
-      <footer v-if=" !isSearch || pokemonSearch.name">
+      <footer v-if="!isSearch || pokemonSearch.name">
         <Button :text="'All'" :all="true" />
-        <Button :text="'Favorites'" :favorite="true" :disabled="true" />
+        <Button
+          :text="'Favorites'"
+          :favorite="true"
+          :disabled="true"
+          @click="changeToFavorites"
+        />
       </footer>
     </div>
+    <Modal v-show="isModalVisible" @close="closeModal" :info="data" />
   </div>
 </template>
 
@@ -37,6 +44,7 @@ import Loader from '../components/Loader.vue';
 import InputSearch from '../components/InputSearch.vue';
 import ItemList from '../components/ItemList.vue';
 import Button from '../components/Button.vue';
+import Modal from '../components/Modal.vue';
 
 export default {
   name: 'Results',
@@ -45,6 +53,13 @@ export default {
     InputSearch,
     ItemList,
     Button,
+    Modal,
+  },
+  data() {
+    return {
+      isModalVisible: false,
+      data: {},
+    };
   },
   created() {
     this.getPokemons();
@@ -64,6 +79,16 @@ export default {
       if (scroll + offset >= height - 100) {
         this.$store.dispatch('pokemon/getNextPokemons');
       }
+    },
+    changeToFavorites() {
+      this.$router.push('/favorites');
+    },
+    showModal(item) {
+      this.data = item;
+      this.isModalVisible = true;
+    },
+    closeModal() {
+      this.isModalVisible = false;
     },
   },
   computed: {
