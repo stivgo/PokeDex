@@ -1,3 +1,6 @@
 export const SET_POKEMON = 'SET_POKEMON';
+export const SET_POKEMON_SEARCH = 'SET_POKEMON_SEARCH';
 export const SET_FAVORITE = 'SET_FAVORITE';
 export const SET_LOADING = 'SET_LOADING';
+export const SET_SEARCH = 'SET_SEARCH';
+export const RESET_POKEMON = 'RESET_POKEMON';
